@@ -46,12 +46,17 @@ row1 = ["@","@","@"]
 row2 = ["@","@","@"]
 row3 = ["@","@","@"]
 
-print(row1)
-print(row2)
-print(row3)
+matrix = (row1,row2,row3)
+print(f"{row1}\n{row2}\n{row3}")
 
 location = input("Please choose your choice with location (column,row): ")
-location_len = len(location)
-tmp = split(location_len)
+location_num = int(location)
+if location_num > 33:
+  print("Your number is out of range, please try again!")
+else:
+  #location_num = str(location)
+  col = int(location[0]) - 1
+  row = int(location[1]) - 1
+  matrix[col][row] = "X"
+  print(f"{row1}\n{row2}\n{row3}")
 
-print(tmp)
